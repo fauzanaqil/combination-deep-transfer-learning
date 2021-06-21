@@ -1,0 +1,32 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <style type="text/css">
+    	body {    
+    		background-color: #ffffff;
+    		font-family: "Raleway", sans-serif;
+    		color: black;
+    	}
+	    form {
+	        text-align: left;
+	        font-size: 15px;
+	    }
+	</style>
+    <h2 style="font-size:30px">Classification Result</h2>
+    <br>
+    <div>
+    	<img src={{filePathName}} width="300px" height="200px">
+    </div>
+    <br><br>
+
+    <label>Percentage of focal is {{stats_a}}</label><br>
+    <label>Percentage of normal is {{stats_b}}</label><br>
+    <label>Percentage of sclerosed is {{stats_c}}</label><br>
+    <label>Highest Probability: {{predictedLabel}} with a {{predictedScore}} percent confidence</label>
+	<br><br>
+	<br>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <style type="text/css">
+    	body {    
+    		background-color: #ffffff;
+    		font-family: "Raleway", sans-serif;
+    	}
+	    form {
+	        text-align: left;
+	        font-size: 15px;
+	    }
+	</style>
+    <h4 style="margin-top:10px;">Upload Image for Classification</h4>
+    
+    <hr>
+    <form method="post" enctype="multipart/form-data" action="predictImage">
+  
+		{% csrf_token %}
+		<div class="col-md-4 col-sm-1">
+			<label for="fname">Upload Image File Here:</label>
+			<input name="filePath" type="file">
+		</div>
+		<div>
+			<br><br><br>
+			<label for="type_class" id="type_class">Classification Type:</label><br>
+			<label>1. Independent</label><br>
+			<label>2. Combination</label><br>
+			<input type="text" name="type_class"><br>
+		</div>
+		<div>
+			<label for="type_class" id="type_class">Combination Type:</label><br>
+			<label>1. Allied</label><br>
+			<label>2. Cross</label><br>
+			<label>3. Multivariate</label><br>
+			<input type="text" name="comb_class"><br>
+		</div>
+		<div>
+			<br>
+			<input type="submit" value="Submit">
+		</div>
+	</form>
+	<br>
+{% endblock %}
